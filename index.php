@@ -41,7 +41,6 @@ if ($sql->rowCount() > 0) {
 
         <!-- Lista de tarefas -->
         <div id="tasks">
-            <?php foreach ($tasks as $t): ?>
                 <div class="tasks">
 
                     <!-- Checkbox -->
@@ -82,11 +81,7 @@ if ($sql->rowCount() > 0) {
                     </form>
 
                 </div>
-            <?php endforeach; ?>
         </div>
     </div>
-
-    <!-- JS -->
-    <script src="src/script.js"></script>
 </body>
 </html>
