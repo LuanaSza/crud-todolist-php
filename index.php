@@ -26,7 +26,7 @@ if ($sql->rowCount() > 0) {
 <body>
     <div id="to_do">
         <h1>MY TASKS</h1>
-         <!-- Formulário de criação -->
+         <!-- formulário de criação -->
         <form action="actions/create.php" method="POST" class="form-to_do">
             <input
                 type="text"
@@ -39,23 +39,19 @@ if ($sql->rowCount() > 0) {
             </button>
         </form>
 
-        <!-- Lista de tarefas -->
         <div id="tasks">
                 <div class="tasks">
 
-                    <!-- Checkbox -->
                     <input
                         type="checkbox"
                         class="progress"
                         <?= $t['completed'] ? 'checked' : '' ?>
                     />
 
-                    <!-- Descrição -->
                     <p class="task-description">
                         <?= htmlspecialchars($t['description']) ?>
                     </p>
 
-                    <!-- Ações -->
                     <div class="task-actions">
                         <a href="editar.php?id=<?= $t['id'] ?>" class="editar-button">
                             <i class="fa-solid fa-pen-to-square"></i>
@@ -66,7 +62,6 @@ if ($sql->rowCount() > 0) {
                         </a>
                     </div>
 
-                    <!-- Formulário de edição -->
                     <form action="actions/update.php" method="POST" class="to-do-form edit-tasks">
                         <input type="hidden" name="id" value="<?= $t['id'] ?>">
                         <input
