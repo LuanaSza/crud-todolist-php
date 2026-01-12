@@ -1,8 +1,8 @@
 <?php
-// Importa a conexão com o banco
+// importa a conexão com o banco
 require_once 'database/conexao.php';
 
-// Busca as tarefas
+// busca as tarefas
 $tasks = [];
 $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
 
@@ -26,7 +26,7 @@ if ($sql->rowCount() > 0) {
 <body>
     <div id="to_do">
         <h1>MY TASKS</h1>
-         <!-- formulário de criação -->
+         <!-- Formulário de criação -->
         <form action="actions/create.php" method="POST" class="form-to_do">
             <input
                 type="text"
@@ -39,7 +39,9 @@ if ($sql->rowCount() > 0) {
             </button>
         </form>
 
+        <!-- Lista de tarefas -->
         <div id="tasks">
+            <?php foreach ($tasks as $t): ?>
                 <div class="tasks">
 
                     <input
@@ -76,7 +78,11 @@ if ($sql->rowCount() > 0) {
                     </form>
 
                 </div>
+            <?php endforeach; ?>
         </div>
     </div>
+
+    <!-- JS -->
+    <script src="src/script.js"></script>
 </body>
 </html>
